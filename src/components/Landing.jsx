@@ -4,13 +4,24 @@ import { FaArrowRight } from "react-icons/fa6";
 
 export default function Landing() {
   return (
-    <div data-scroll data-scroll-section data-scroll-speed="-0.7" className="relative w-full h-[100vh] pt-1">
+    <div
+      data-scroll
+      data-scroll-section
+      data-scroll-speed="-0.7"
+      className="relative w-full h-[100vh] pt-1"
+    >
       <div className="mt-28 leading-[0.76] px-18">
         <div className="w-full text-[9vw] font-Founders text-[#212121]">
           <h1>WE CREATE</h1>
         </div>
         <div className="w-full align-center flex text-[9vw] gap-4 font-Founders text-[#212121]">
-            <motion.div initial={{width:0}} animate={{width:"9vw"}} transition={{ease: [0.19, 1, 0.22, 1], duration:1}} className="w-[9vw] rounded-xl h-[6vw] md:mt-[2vh] mt-[1vh] bg-red-400"></motion.div>
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "9vw" }}
+            transition={{ ease: [0.19, 1, 0.22, 1], duration: 1 }}
+            className="w-[9vw] h-[6vw] md:mt-[2vh] mt-[1vh] overflow-hidden rounded-xl bg-[url('https://images.unsplash.com/photo-1758007664211-49b4805638e5?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-no-repeat bg-center bg-auto"
+          />
+
           <h1>EYE-OPENING</h1>
         </div>
         <div className="w-full text-[9vw] font-Founders text-[#212121]">
