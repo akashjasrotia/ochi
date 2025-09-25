@@ -2,9 +2,9 @@ import React from "react";
 
 export default function Featured() {
   return (
-    <div data-scroll data-scroll-section data-scroll-speed="0.2" className="pb-20">
+    <div data-scroll data-scroll-section data-scroll-speed="-0.2" className="pb-20 min-h-[100vh] w-full">
       <div className="w-full pl-20 mb-10 pt-30 pb-15 border-b-1 border-gray-400">
-        <h1 className="text-7xl font-Neue">Featured Projects</h1>
+        <h1  className="text-7xl font-Neue">Featured Projects</h1>
       </div>
       <div className="flex flex-col md:flex-row gap-5 px-16 relative">
         <h1 className="z-10 absolute top-[10vw] left-1/2 -translate-x-[50%]  text-[10vw] font-Founders font-extrabold text-[#CDEA68] whitespace-nowrap pointer-events-none">

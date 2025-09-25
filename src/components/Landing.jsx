@@ -5,7 +5,8 @@ import OnlyEyes from "./OnlyEyes";
 
 export default function Landing() {
   return (
-    <div
+    <motion.div 
+    // initial={{scale:0.95,opacity:0}} animate={{scale:1,opacity:1}} transition={{ease:'linear',duration:1,delay:0.5}}
       data-scroll
       data-scroll-section
       data-scroll-speed="-0.7"
@@ -42,6 +43,6 @@ export default function Landing() {
         </div>
       </div>
       <OnlyEyes top={'20vw'} left={'50vw'}/>
-    </div>
+    </motion.div>
   );
 }
