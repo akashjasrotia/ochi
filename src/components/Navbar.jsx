@@ -3,7 +3,7 @@ import React from "react";
 export default function Navbar() {
     const links  = ["Services","Our work","About us","Insights"];
   return (
-    <div className="z-[999] fixed top-0 left-0 w-full h-16 text-black flex items-center tracking-wider px-17 pt-4  justify-between">
+    <div className=" backdrop-blur-sm z-[999] fixed top-0 left-0 w-full h-16 text-black flex items-center tracking-wider px-17 py-10  justify-between">
       <div className="w-1/2">
         <svg
           width="72"
