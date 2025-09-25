@@ -6,6 +6,7 @@ import About from "./components/About";
 import Eyes from "./components/Eyes";
 import Featured from "./components/Featured";
 import LocomotiveScroll from "locomotive-scroll";
+import { motion } from "framer-motion";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -53,14 +54,14 @@ export default function App() {
           <span className="text-xl md:text-3xl font-semibold">{progress}%</span>
         </div>
       ) : (
-        <div data-scroll-container className="w-full bg-[#f9f9f9] text-gray-900">
+        <motion.div initial={{scale:0.95,opacity:0}} animate={{scale:1,opacity:1}} transition={{ease:'easeOut',duration:0.7,delay:0.2}} data-scroll-container className="w-full bg-[#f9f9f9] text-gray-900">
           <Navbar />
           <Landing />
           <Marquee />
           <About />
           <Eyes />
           <Featured />
-        </div>
+        </motion.div>
       )}
     </div>
   );
