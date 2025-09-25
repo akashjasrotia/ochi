@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
+import OnlyEyes from "./OnlyEyes";
 
 export default function Landing() {
   return (
@@ -40,6 +41,7 @@ export default function Landing() {
           </p>
         </div>
       </div>
+      <OnlyEyes/>
     </div>
   );
 }
