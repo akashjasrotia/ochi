@@ -11,7 +11,7 @@ export default function Landing() {
       data-scroll-speed="-0.7"
       className="relative w-full h-[100vh] pt-1"
     >
-      <div className="mt-28 leading-[0.76] px-18">
+      <div className="mt-28 leading-[0.76] px-8 md:px-18">
         <div className="w-full text-[9vw] font-Founders text-[#212121]">
           <h1>WE CREATE</h1>
         </div>
@@ -29,7 +29,7 @@ export default function Landing() {
           <h1>PRESENTATIONS</h1>
         </div>
       </div>
-      <div className="absolute border-t-1 border-gray-400 py-5 bottom-34 w-full flex justify-between px-18 text-xl text-gray-900">
+      <div className="absolute hidden border-t-1 border-gray-400 py-5 bottom-34 w-full md:flex justify-between px-18 text-xl text-gray-900">
         <p>Presentation and storytelling agency</p>
         <p>For innovation teams and global brands</p>
         <div className="flex items-center gap-2 group">
@@ -41,7 +41,7 @@ export default function Landing() {
           </p>
         </div>
       </div>
-      <OnlyEyes/>
+      <OnlyEyes top={'20vw'} left={'50vw'}/>
     </div>
   );
 }

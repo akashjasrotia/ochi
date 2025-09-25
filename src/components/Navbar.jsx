@@ -1,7 +1,15 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { LuSquareMenu } from "react-icons/lu";
+import { IoMdClose } from "react-icons/io"
+import { motion } from "framer-motion";
 export default function Navbar() {
-    const links  = ["Services","Our work","About us","Insights"];
+  const links = ["Services", "Our work", "About us", "Insights"];
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(!open);
+    console.log(open);
+  };
   return (
     <div className=" backdrop-blur-sm z-[999] fixed top-0 left-0 w-full h-16 text-black flex items-center tracking-wider px-17 py-10  justify-between">
       <div className="w-1/2">
@@ -34,16 +42,55 @@ export default function Navbar() {
           ></path>
         </svg>
       </div>
-      <div className="w-1/2 flex justify-between text-xl font-Neue font-light">
+      <div className="hidden w-1/2 lg:flex justify-between text-xl font-Neue font-light">
         <div>
-            {links.map((links,index)=>(
-                <a key={index} href={`#${links}`} className="px-4">{links}</a>
-            ))}
+          {links.map((links, index) => (
+            <a key={index} href={`#${links}`} className="px-4">
+              {links}
+            </a>
+          ))}
         </div>
         <div>
-            <a>
-                Contact us
+          <a>Contact us</a>
+        </div>
+      </div>
+      <div className="lg:hidden  text-black">
+        <button className="cursor-pointer" onClick={handleOpen}>
+          <LuSquareMenu size={25} />
+        </button>
+      </div>
+      <div
+        className={`absolute w-full h-screen bg-black top-0 left-0 ${
+          !open ? "translate-y-[-100%]" : "translate-y-0"
+        } transition-all duration-300 ease-in-out`}
+      >
+        <button
+          className=" cursor-pointer fixed top-5 right-5 z-50 p-2 mr-8 text-white rounded"
+          onClick={() => setOpen(!open)}
+        >
+          <IoMdClose size={30} />
+        </button>
+
+        <div
+          className={`font-Founders absolute w-full h-screen bg-[#212121] top-0 left-0 z-40 flex flex-col pt-30 pl-4 text-white text-3xl md:text-5xl transition-transform duration-500 ease-in-out ${
+            open ? "translate-y-0" : "-translate-y-full"
+          }`}
+        >
+          <div className="border-t-1 pt-8 border-gray-500 flex flex-col mt-10">
+            {links.map((link) => (
+              <a  className="cursor-pointer mb-8 overflow-hidden leading-[0.6] text-7xl pb-1.5 uppercase hover:text-gray-400 transition-colors">
+                {open && <motion.p initial={{y:50}} animate={{y:0}} transition={{ease:'linear',delay:0.3, duration:0.5}}>{link}</motion.p>}
+                
+              </a>
+            ))}
+            <a
+              href="#contact"
+              className="leading-[0.6] text-7xl uppercase hover:text-gray-400 transition-colors overflow-hidden"
+            >
+              {open && <motion.p initial={{y:50}} animate={{y:0}} transition={{ease:'linear',delay:0.3, duration:0.5}}>Contact us</motion.p>}
+              
             </a>
+          </div>
         </div>
       </div>
     </div>

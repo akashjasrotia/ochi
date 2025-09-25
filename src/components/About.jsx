@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import image from '../assets/image.jpg'
 export default function About() {
   return (
-    <div data-scroll data-scroll-section data-scroll-speed="0.2" className="rounded-t-3xl w-full  text-3xl font-bold bg-[#CDEA68] font-Neue">
+    <div data-scroll data-scroll-section data-scroll-speed="0.1" className="rounded-t-3xl w-full  text-3xl font-bold bg-[#CDEA68] font-Neue">
       <div className="border-b-1 border-black/30 w-full pl-18 pt-30 pr-60 pb-16 text-[3.5vw] font-light">
         We craft category-defining presentations, brand identities, and digital
         experiences that drive funding, sales, and market leadership.
