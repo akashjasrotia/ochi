@@ -1,0 +1,23 @@
+@import "tailwindcss";
+::selection{
+    background-color: #000000;
+    color: #ffffff;
+}
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('./assets/NeueMontreal-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Founders Grotesk';
+  src: url('./assets/FoundersGrotesk-Semibold.ttf') format('truetype');
+}
+@theme{
+  --font-Neue : 'Neue Montreal', sans-serif;
+  --font-Founders : 'Founders Grotesk', sans-serif;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+body{
+  background-color: #f1f1f1;
+}
