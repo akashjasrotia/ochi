@@ -12,6 +12,9 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
 
+  window.addEventListener("resize", () => {
+    window.location.reload();
+  });
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 3000);
     return () => clearTimeout(timer);
@@ -54,7 +57,13 @@ export default function App() {
           <span className="text-xl md:text-3xl font-semibold">{progress}%</span>
         </div>
       ) : (
-        <motion.div initial={{scale:0.95,opacity:0}} animate={{scale:1,opacity:1}} transition={{ease:'easeOut',duration:0.7,delay:0.2}} data-scroll-container className="w-full bg-[#f9f9f9] text-gray-900">
+        <motion.div
+          initial={{ scale: 0.95, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ ease: "easeOut", duration: 0.7, delay: 0.2 }}
+          data-scroll-container
+          className="w-full bg-[#f9f9f9] text-gray-900"
+        >
           <Navbar />
           <Landing />
           <Marquee />
