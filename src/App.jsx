@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./components/Navbar";
-import Landing from "./components/Landing";
-import Marquee from "./components/Marquee";
-import About from "./components/About";
-import Eyes from "./components/Eyes";
-import Featured from "./components/Featured";
 import LocomotiveScroll from "locomotive-scroll";
 import { motion } from "framer-motion";
+import Home from "./pages/Home";
+import { Route, Routes } from "react-router-dom";
+import AboutUs from "./pages/AboutUs";
+import Navbar from "./components/Navbar";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -58,18 +56,14 @@ export default function App() {
         </div>
       ) : (
         <motion.div
-          initial={{ scale: 0.95, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ ease: "easeOut", duration: 0.7, delay: 0.2 }}
           data-scroll-container
           className="w-full bg-[#f9f9f9] text-gray-900"
         >
-          <Navbar />
-          <Landing />
-          <Marquee />
-          <About />
-          <Eyes />
-          <Featured />
+          <Navbar/>
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="about-us" element={<AboutUs/>}/>
+          </Routes>
         </motion.div>
       )}
     </div>

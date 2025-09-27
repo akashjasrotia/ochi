@@ -9,7 +9,7 @@ export default function Landing() {
     // initial={{scale:0.95,opacity:0}} animate={{scale:1,opacity:1}} transition={{ease:'linear',duration:1,delay:0.5}}
       data-scroll
       data-scroll-section
-      data-scroll-speed="-0.7"
+      data-scroll-speed="-0.8"
       className="relative w-full h-[100vh] pt-1"
     >
       <div className="mt-28 leading-[0.76] px-8 md:px-18">

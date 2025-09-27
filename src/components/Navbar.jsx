@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { LuSquareMenu } from "react-icons/lu";
-import { IoMdClose } from "react-icons/io"
+import { IoMdClose } from "react-icons/io";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 export default function Navbar() {
   const links = ["Services", "Our work", "About us", "Insights"];
   const [open, setOpen] = useState(false);
@@ -44,10 +45,14 @@ export default function Navbar() {
       </div>
       <div className="hidden w-1/2 lg:flex justify-between text-xl font-Neue font-light">
         <div>
-          {links.map((links, index) => (
-            <a key={index} href={`#${links}`} className="px-4">
-              {links}
-            </a>
+          {links.map((link, index) => (
+            <NavLink
+              key={index}
+              to={`/${link.toLowerCase().replace(/\s+/g, "-")}`}
+              className="px-4"
+            >
+              {link}
+            </NavLink>
           ))}
         </div>
         <div>
@@ -78,17 +83,31 @@ export default function Navbar() {
         >
           <div className="border-t-1 pt-8 border-gray-500 flex flex-col mt-10">
             {links.map((link) => (
-              <a  className="cursor-pointer mb-8 overflow-hidden leading-[0.6] text-7xl pb-1.5 uppercase hover:text-gray-400 transition-colors">
-                {open && <motion.p initial={{y:50}} animate={{y:0}} transition={{ease:'linear',delay:0.3, duration:0.5}}>{link}</motion.p>}
-                
+              <a className="cursor-pointer mb-8 overflow-hidden leading-[0.6] text-7xl pb-1.5 uppercase hover:text-gray-400 transition-colors">
+                {open && (
+                  <motion.p
+                    initial={{ y: 50 }}
+                    animate={{ y: 0 }}
+                    transition={{ ease: "linear", delay: 0.3, duration: 0.5 }}
+                  >
+                    {link}
+                  </motion.p>
+                )}
               </a>
             ))}
             <a
               href="#contact"
               className="leading-[0.6] text-7xl uppercase hover:text-gray-400 transition-colors overflow-hidden"
             >
-              {open && <motion.p initial={{y:50}} animate={{y:0}} transition={{ease:'linear',delay:0.3, duration:0.5}}>Contact us</motion.p>}
-              
+              {open && (
+                <motion.p
+                  initial={{ y: 50 }}
+                  animate={{ y: 0 }}
+                  transition={{ ease: "linear", delay: 0.3, duration: 0.5 }}
+                >
+                  Contact us
+                </motion.p>
+              )}
             </a>
           </div>
         </div>

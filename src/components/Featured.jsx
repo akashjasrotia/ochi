@@ -3,7 +3,7 @@ import w1 from "../assets/w1.png"
 import w2 from "../assets/w2.png"
 export default function Featured() {
   return (
-    <div data-scroll data-scroll-section data-scroll-speed="-0.2" className="pb-20 min-h-[100vh] w-full">
+    <div data-scroll data-scroll-section data-scroll-speed="0.3" className="pb-20 min-h-[100vh] w-full">
       <div className="w-full pl-20 mb-10 pt-30 pb-15 border-b-1 border-gray-400">
         <h1  className="text-7xl font-Neue">Completed Projects</h1>
       </div>
@@ -12,9 +12,9 @@ export default function Featured() {
             ● MORDERN WEB PAGES
         </h1>
         <div className="md:w-1/2 h-[70vh]">    
-          <div className="group hover:scale-95 transition-all duration-300 w-full h-full bg-green-500 rounded-2xl overflow-hidden">
+          <div className="group hover:scale-95  transition-all duration-300 w-full h-full bg-green-500 rounded-2xl overflow-hidden">
             <img
-              className="group-hover:scale-110 transition-all duration-300 object-cover w-full h-full"
+              className="group-hover:scale-110 object-center transition-all duration-300 w-full h-full"
               src={w1}
             />
           </div>
